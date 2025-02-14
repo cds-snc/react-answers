@@ -15,3 +15,9 @@ variable "openai_api_key" {
   sensitive   = true
   type        = string
 }
+
+variable "mongodb_uri" {
+  description = "The MongoDB connection URI"
+  sensitive   = true
+  type        = string
+}

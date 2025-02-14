@@ -25,3 +25,9 @@ resource "aws_ssm_parameter" "openai_api_key" {
   type  = "SecureString"
   value = var.openai_api_key
 }
+
+resource "aws_ssm_parameter" "mongodb_uri" {
+  name  = "mongodb_uri"
+  type  = "SecureString"
+  value = var.mongodb_uri 
+}

@@ -3,9 +3,14 @@ locals {
     {
       "name"      = "OPENAI_API_KEY"
       "valueFrom" = var.openai_api_key_arn
+    },
+    {
+      "name"      = "MONGODB_URI"
+      "valueFrom" = var.mongodb_uri_arn
     }
   ]
 }
+
 module "ai_answers" {
   source = "github.com/cds-snc/terraform-modules//ecs?ref=v10.3.0"
 
