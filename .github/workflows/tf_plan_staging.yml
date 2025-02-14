@@ -57,7 +57,7 @@ jobs:
           aws-region: ${{ env.AWS_REGION }}
 
       - name: Terraform plan
-        uses: cds-snc/terraform-plan@v3.2.2
+        uses: cds-snc/terraform-plan@v3.3.1
         with:
           comment-delete: true
           comment-title: "Staging: ${{ matrix.module }}"
