@@ -42,7 +42,7 @@ app.get('*', (req, res, next) => {
   res.sendFile(path.join(__dirname, '../build', 'index.html'));
 });
 
-mongoose.connect(process.env.MONGODB_URI)
+mongoose.connect(process.env.DOCDB_URI)
   .then(() => {
     console.log('MongoDB connected successfully');
     console.log(`Running in ${process.env.REACT_APP_ENV || 'production'} mode`);
@@ -63,7 +63,7 @@ if (process.env.REACT_APP_ENV === 'development') {
   console.log('OPENAI_API_KEY:', process.env.OPENAI_API_KEY ? 'Set' : 'Not Set');
   console.log('ANTHROPIC_API_KEY:', process.env.ANTHROPIC_API_KEY ? 'Set' : 'Not Set');
   console.log('COHERE_API_KEY:', process.env.COHERE_API_KEY ? 'Set' : 'Not Set');
-  console.log('MONGODB_URI:', process.env.MONGODB_URI ? 'Set' : 'Not Set');
+  console.log('DOCDB_URI:', process.env.DOCDB_URI ? 'Set' : 'Not Set');
 } else {
   console.log('Running in production mode');
 }

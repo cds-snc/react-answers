@@ -15,3 +15,9 @@ variable "openai_api_key" {
   sensitive   = true
   type        = string
 }
+
+variable "docdb_uri" {
+  description = "The Document DB connection URI"
+  sensitive   = true
+  type        = string
+}

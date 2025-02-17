@@ -66,6 +66,7 @@ dependency "ssm" {
   mock_outputs_merge_with_state           = true
   mock_outputs = {
     openai_api_key_arn = ""
+    docdb_uri_arn      = ""
   }
 }
 
@@ -81,6 +82,7 @@ inputs = {
   ai_answers_load_balancer_sg      = dependency.load_balancer.outputs.ai_answers_load_balancer_sg
   aws_docdb_security_group_id      = dependency.database.outputs.aws_docdb_security_group_id
   openai_api_key_arn               = dependency.ssm.outputs.openai_api_key_arn
+  docdb_uri_arn                    = dependency.ssm.outputs.docdb_uri_arn
 }
 
 include {

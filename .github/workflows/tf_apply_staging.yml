@@ -1,4 +1,4 @@
-name: 'Terraform apply staging'
+name: "Terraform apply staging"
 
 on:
   workflow_dispatch:
@@ -6,9 +6,9 @@ on:
     branches:
       - main
     paths:
-      - 'terragrunt/**'
-      - '!terragrunt/env/staging/**'
-      - '.github/workflows/tf_apply_staging.yml'
+      - "terragrunt/**"
+      - "!terragrunt/env/staging/**"
+      - ".github/workflows/tf_apply_staging.yml"
 
 env:
   AWS_REGION: ca-central-1
@@ -17,6 +17,7 @@ env:
   TF_VAR_docdb_username: ${{ secrets.DOCDB_USERNAME}}
   TF_VAR_docdb_password: ${{ secrets.DOCDB_PASSWORD}}
   TF_VAR_openai_api_key: ${{ secrets.OPENAI_API_KEY}}
+  TF_VAR_docdb_uri: ${{ secrets.DOCDB_URI }}
   TF_VAR_sentinel_customer_id: ${{ secrets.LOG_ANALYTICS_WORKSPACE_ID }}
   TF_VAR_sentinel_shared_key: ${{ secrets.LOG_ANALYTICS_WORKSPACE_KEY }}
 

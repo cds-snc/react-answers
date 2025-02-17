@@ -75,3 +75,8 @@ variable "openai_api_key_arn" {
   description = "Arn of the OpenAI API key"
   type        = string
 }
+
+variable "docdb_uri_arn" {
+  description = "ARN of the Document DB URI parameter"
+  type        = string
+}

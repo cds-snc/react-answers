@@ -22,3 +22,8 @@ output "openai_api_key_arn" {
   description = "Arm of he openai api key parameter"
   value       = aws_ssm_parameter.openai_api_key.arn
 }
+
+output "docdb_uri_arn" {
+  description = "ARN of the Document DB URI parameter"
+  value       = aws_ssm_parameter.docdb_uri.arn
+}
