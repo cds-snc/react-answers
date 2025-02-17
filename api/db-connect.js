@@ -19,7 +19,7 @@ async function dbConnect() {
       connectTimeoutMS: 30000, // 30 seconds timeout
     };
 
-    cached.promise = mongoose.connect(process.env.MONGODB_URI, opts).then((mongoose) => {
+    cached.promise = mongoose.connect(process.env.DOCDB_URI, opts).then((mongoose) => {
       return mongoose;
     });
   }

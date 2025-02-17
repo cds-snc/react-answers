@@ -23,7 +23,7 @@ output "openai_api_key_arn" {
   value       = aws_ssm_parameter.openai_api_key.arn
 }
 
-output "mongodb_uri_arn" {
+output "docdb_uri_arn" {
   description = "ARN of the MongoDB URI parameter"
-  value       = aws_ssm_parameter.mongodb_uri.arn
+  value       = aws_ssm_parameter.docdb_uri.arn
 }

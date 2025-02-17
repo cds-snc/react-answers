@@ -76,7 +76,7 @@ variable "openai_api_key_arn" {
   type        = string
 }
 
-variable "mongodb_uri_arn" {
+variable "docdb_uri_arn" {
   description = "ARN of the MongoDB URI parameter"
   type        = string
 }

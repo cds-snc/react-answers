@@ -5,8 +5,8 @@ locals {
       "valueFrom" = var.openai_api_key_arn
     },
     {
-      "name"      = "MONGODB_URI"
-      "valueFrom" = var.mongodb_uri_arn
+      "name"      = "DOCDB_URI"
+      "valueFrom" = var.docdb_uri_arn
     }
   ]
 }
