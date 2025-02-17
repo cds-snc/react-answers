@@ -28,8 +28,3 @@ variable "docdb_instane_count" {
   type        = number
   default     = 1
 }
-
-variable "billing_code" {
-  description = "The billing code for cost allocation"
-  type        = string
-}

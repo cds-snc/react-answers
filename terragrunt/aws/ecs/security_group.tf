@@ -23,14 +23,16 @@ resource "aws_security_group_rule" "ecs_ingress_lb" {
 }
 
 resource "aws_security_group_rule" "ecs_egress_all" {
-  description       = "Allow ecs security group to send all traffic"
-  type              = "egress"
-  from_port         = -1
-  to_port           = -1
-  protocol          = "-1"
+  description = "Allow ECS security group to send all traffic"
+  type        = "egress"
+  from_port   = 0
+  to_port     = 0
+  protocol    = "-1"
+
   cidr_blocks       = ["0.0.0.0/0"]
   security_group_id = aws_security_group.ecs_tasks.id
 }
+
 
 ###
 # Traffic to DocumentDB should only come from ECS
@@ -41,7 +43,7 @@ resource "aws_security_group_rule" "ecs_egress_database" {
   type                     = "egress"
   from_port                = 27017
   to_port                  = 27017
-  protocol                 = "TCP"
+  protocol                 = "tcp"
   source_security_group_id = var.aws_docdb_security_group_id
   security_group_id        = aws_security_group.ecs_tasks.id
 }
@@ -51,7 +53,7 @@ resource "aws_security_group_rule" "database_ingress_ecs" {
   type                     = "ingress"
   from_port                = 27017
   to_port                  = 27017
-  protocol                 = "TCP"
+  protocol                 = "tcp"
   source_security_group_id = aws_security_group.ecs_tasks.id
   security_group_id        = var.aws_docdb_security_group_id
 }
