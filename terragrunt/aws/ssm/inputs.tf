@@ -21,3 +21,8 @@ variable "docdb_uri" {
   sensitive   = true
   type        = string
 }
+
+variable "billing_code" {
+  description = "The billing code for cost allocation"
+  type        = string
+}

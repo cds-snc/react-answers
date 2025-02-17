@@ -29,5 +29,5 @@ resource "aws_ssm_parameter" "openai_api_key" {
 resource "aws_ssm_parameter" "docdb_uri" {
   name  = "docdb_uri"
   type  = "SecureString"
-  value = var.docdb_connection_uri
+  value = var.docdb_uri
 }

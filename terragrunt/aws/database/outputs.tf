@@ -18,7 +18,7 @@ output "aws_docdb_cluster_endpoint" {
   value       = aws_docdb_cluster.ai-answers-docdb-cluster.endpoint
 }
 
-output "aws_docdb_connection_uri" {
+output "docdb_uri" {
   description = "The connection URI for DocumentDB"
   sensitive   = true
   value       = "mongodb://${data.aws_ssm_parameter.docdb_username.value}:${data.aws_ssm_parameter.docdb_password.value}@${aws_docdb_cluster.ai-answers-docdb-cluster.endpoint}:27017/?tls=true&replicaSet=rs0&readPreference=secondaryPreferred&retryWrites=false"
